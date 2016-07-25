@@ -5,7 +5,7 @@ class CommentsController < ApplicationController
 
     @comment.save
 
-    flash.notice = "Article '#{@comment.author_name} created a comment'!"
+    flash.notice = "Article '#{@comment.author_name} created a comment-'!"
 
     redirect_to article_path(@comment.article)
   end
