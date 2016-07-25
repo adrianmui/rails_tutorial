@@ -7,11 +7,13 @@ class ArticlesController < ApplicationController
 
   def show
     @article = (Article.find(params[:id]) == nil) ? Article.all : Article.find(params[:id])
-
+    @comment = Comment.new
   end
 
   def new
     @article = Article.new
+    @comment = Comment.new
+    @comment.article_id = @article.id
   end
 
   def create
